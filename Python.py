@@ -10,10 +10,8 @@ blanks = '*' * length
 letters = 0
 win = False
 
-print(blanks, '\t\tLives: ', lives)
-print(blanks, '\t\tLives: ', lives, '\n')
-
 while True:
+    print(blanks, '\t\tLives: ', lives, '\n')
     guess = input('Please enter your next guess:')
 
     if guess in blanks:
@@ -34,14 +32,8 @@ while True:
             blanks = blanks[:i] + word[i] + blanks[i+1:]
 
     if letters == length:
+        print('You Lose')
         break
     if '*' not in blanks:
-        win = True
+        print('Congratulations You Win')
         break
-
-print('\n')
-if win == False:
-    print('You Lose')
-
-if win == True:
-    print('Congratulations You Win')
